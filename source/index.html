@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terp Track</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #ffffff;
+        font-family: 'Source Sans Pro', sans-serif;
+        transition: background 0.25s ease;
+        overflow: hidden;
+      }
+
+      #shell-pattern {
+        position: fixed;
+        inset: -50%;
+        width: 200%;
+        height: 200%;
+        background-repeat: repeat;
+        background-size: 300px auto;
+        opacity: 0.04;
+        pointer-events: none;
+        z-index: -1;
+        transform: rotate(45deg);
+      }
+
+      body[data-page='login'] {
+        background: #ffffff;
+      }
+
+      body[data-page='login'] terp-chat {
+        display: none;
+      }
+
+      body[data-page='chat'] terp-login {
+        display: none;
+      }
+
+      ::view-transition-old(root) {
+        animation: vt-fade-out 0.3s ease-out;
+      }
+
+      ::view-transition-new(root) {
+        animation: vt-fade-in 0.3s ease-in;
+      }
+
+      @keyframes vt-fade-out {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes vt-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="login">
+    <div id="shell-pattern" aria-hidden="true"></div>
+    <terp-login></terp-login>
+    <terp-chat data-mode="default" data-loading="false"></terp-chat>
+    <script>
+      try {
+        var s = JSON.parse(localStorage.getItem('terp-track-session') || '');
+        if (s && Date.now() < s.expiresAt)
+          document.body.setAttribute('data-page', 'chat');
+      } catch (e) {}
+      var t = localStorage.getItem('terp-track-theme');
+      if (t === 'dark')
+        document.querySelector('terp-chat').setAttribute('data-theme', 'dark');
+    </script>
+    <script type="module" src="./scripts/index.ts"></script>
+  </body>
+</html>

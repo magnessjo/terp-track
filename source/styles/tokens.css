@@ -1,0 +1,54 @@
+:root {
+  /* Brand */
+  --color-red: #e21833;
+  --color-gold: #ffd200;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Neutrals */
+  --color-dark-gray: #454545;
+  --color-medium-gray: #7f7f7f;
+  --color-light-gray: #e6e6e6;
+  --color-bronze: #ad7231;
+
+  /* Semantic */
+  --color-bg: var(--color-white);
+  --color-text: var(--color-black);
+  --color-primary: var(--color-red);
+  --color-primary-hover: #b51229;
+  --color-accent: var(--color-gold);
+
+  /* Message type borders */
+  --color-success: #2e7d32;
+  --color-error: #c62828;
+  --color-clarification: #1565c0;
+  --color-confirmation: #ef6c00;
+  --color-info: #757575;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-round: 50%;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* Typography */
+  --font-family:
+    'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.125rem;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --line-height: 1.5;
+}
