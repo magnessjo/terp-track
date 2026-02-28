@@ -2,8 +2,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: 'source',
+  base: '/terp-track/',
   build: {
-    outDir: '../docs',
+    outDir: '../dist',
     emptyOutDir: true,
   },
   server: {

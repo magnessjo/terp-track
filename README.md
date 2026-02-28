@@ -13,7 +13,7 @@ Chatbot UI for managing Trello tasks via n8n webhook.
 ## Commands
 
 - `npm start` — Dev server on port 3000
-- `npm run build` — Production build to `docs/`
+- `npm run build` — Production build to `dist/`
 - `npm test` — Run tests in watch mode
 - `npm run test:run` — Run tests once
 - `npm run format` — Prettier on source files
